@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const email = "diego@medici.uy";
+
+const links = [
+	{ href: "https://www.linkedin.com/in/dbstratta", text: "LinkedIn" },
+	{ href: "https://github.com/dbstratta", text: "GitHub" },
+	{ href: "https://medici.uy/@diego", text: "medici" },
+	{ href: "https://blog.medici.uy", text: "Blog" },
+	{ href: `mailto:${email}`, text: email },
+];
+---
+
+<Layout>
+	<main>
+		<div class="rounded-full text-[10rem] leading-none mb-8 select-none text-center">🌌</div>
+		<h1 class="font-extrabold text-4xl mb-6">Diego Stratta</h1>
+		<div class="flex flex-col gap-1 items-center">
+			{links.map(link => <a href={link.href} class="hover:underline hover:text-black dark:hover:text-white py-1 px-3 text-xl">{link.text}</a>)}
+		</div>
+	</main>
+</Layout>
